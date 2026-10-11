@@ -1,0 +1,13 @@
+.search-field {
+  display: block;
+  width: 100%;
+}
+
+.search-preview {
+  margin: 0;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+h3 {
+  color: var(--mat-sys-on-surface);
+}

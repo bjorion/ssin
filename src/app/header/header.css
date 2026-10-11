@@ -1,0 +1,21 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-header {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  padding: 0 6px;
+  position: relative;
+  z-index: 9;
+
+  .branding {
+    display: flex;
+    line-height: 50px;
+    margin: auto 0;
+    overflow: hidden;
+    padding: 0 64px 0 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

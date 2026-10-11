@@ -1,0 +1,15 @@
+<section class="section">
+  <h3>Enter a SSIN (Social Security Identification Number)</h3>
+  <mat-form-field appearance="outline" class="search-field">
+    <!-- TODO automatically remove non allowed characters -->
+    <mat-label>Please enter the SSIN (digits are sufficient)</mat-label>
+    <input matInput [(ngModel)]="inputSsin" placeholder="e.g. 99.12.31-000.69" maxlength="15"/>
+  </mat-form-field>
+
+  <p class="search-preview">
+    Properly formatted ssin: {{ ssin() }}
+  </p>
+  <p class="search-preview">
+    Only digit ssin: {{ ssin() }}
+  </p>
+</section>
