@@ -1,7 +1,7 @@
-import {Component, computed, effect, Signal, signal, WritableSignal} from '@angular/core';
+import {Component, computed, Signal, signal, WritableSignal} from '@angular/core';
 import {MatFormField, MatInputModule, MatLabel} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
-import {Ssin} from '../model/ssin';
+import {SsinService} from '../service/ssin-service';
 
 @Component({
   imports: [
@@ -16,15 +16,11 @@ import {Ssin} from '../model/ssin';
 })
 export class MainPage {
 
-  protected readonly inputSsin: WritableSignal<string> = signal('');
+  protected inputSsin: WritableSignal<string> = signal('');
 
-  protected readonly ssin: Signal<string> = computed(() => this.inputSsin());
+  protected readonly formattedSsin = computed(() => SsinService.formatSsin(this.inputSsin()))
 
-  constructor() {
-    effect(() => {
-      console.log(`The value entered is: [${this.inputSsin()}]`)
-    })
-  }
+  protected readonly pureSsin: Signal<string> = computed(() => SsinService.stripSsin(this.inputSsin()));
 
 
 }
